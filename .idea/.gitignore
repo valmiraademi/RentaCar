@@ -1,0 +1,17 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../:\laragon\www\rentacar\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+
+
+<form action="fshijAutomjetin.php" method="post">
+    <input type="text" name="automjetiid" hidden value="<?php echo $automjeti['automjetiid'] ?>">
+        <button type="submit" style="border: none;background-color:transparent;cursor:pointer;" name="deleteAutomjetin" onclick="return fshijAutomjetin()">
+            <i class="fa fa-trash"></i>
+        </button>
+</form>
