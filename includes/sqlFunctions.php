@@ -18,7 +18,6 @@
         $sql = "INSERT INTO klientet (emri, mbiemri, nr_personal, email, telefoni, adresa, username, password, roli)
         VALUE ('$emri', '$mbiemri', '$nr_personal', '$email', '$telefoni', '$adresa', '$username', '$password', '$roli')";
         $result = mysqli_query($dbconn, $sql);
-        return $result;
         if($result){
             header('Location: login.php');
         }else{

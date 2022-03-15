@@ -22,8 +22,17 @@
 
 <?php 
 
-    if(isset($_POST['register'])){
-        register( $_POST['emri'],$_POST['mbiemri'], $_POST['nr_personal'], $_POST['email'], $_POST['telefoni'], $_POST['adresa'], $_POST['username'], $_POST['password'], 0);
+    if(isset($_POST['register'])){ 
+        $emri = $_POST['emri'];
+        $mbiemri = $_POST['mbiemri'];
+        $nr_personal = $_POST['nr_personal'];
+        $email = $_POST['email'];
+        $telefoni = $_POST['telefoni'];
+        $adresa = $_POST['adresa'];
+        $username = $_POST['username'];
+        $password = PASSWORD_HASH($_POST['password'],PASSWORD_DEFAULT);
+        $roli = $_POST['roli'];
+        register( $emri, $mbiemri, $nr_personal, $email, $telefoni, $adresa, $username, $password, $roli);
     }
 
 ?>
@@ -44,7 +53,7 @@
             <input type="text" placeholder="Adresa..." name="adresa">
             <input type="text" placeholder="Username..." id="username" name="username" />
             <input type="password" placeholder="Password..." id="password" name="password" />
-            <input type="text" name="roli" hidden>
+            <input type="text" name="roli" value="0" hidden>
             <p style="margin-right: 33px;float:right">Keni account?<span style="color: #009933;"><a
                         style="color: #009933;text-decoration:none; padding-left:10px"
                         href="login.php">Login</a></span></p>
